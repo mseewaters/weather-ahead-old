@@ -1,0 +1,96 @@
+/* Import Roboto font from Google Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+:root {
+    --green: #00FF00;
+    --white: #FFFFFF;
+    --black: #000000;
+    --ltblue: #cbe6fc;
+    --ltblue2: #b8dbe9;
+    --medblue: #1386b6;
+    --medblue2: #09567d;
+    --dkblue:  #022b45;
+    --ltgreen: #bbe3d3;
+    --medgreen: #1ca06c;
+    --dkgreen: #14704c;
+    --bluegreen: #24b8c3;
+    --yellow: #fafccb;
+    --ltyellow: #fefef5;
+
+    --fixedheight: 60px;
+}
+
+
+body {
+background: var(--bg);
+color: var(--fontColor);
+font-family: 'Roboto',Arial, sans-serif;
+}
+
+.center {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+li {
+    list-style: circle;
+}
+  
+.list {
+list-style: square;
+}
+
+.light-theme {
+--bg: var(--green);
+--fontColor: var(--black);
+}
+
+.dark-theme {
+--bg: var(--black);
+--fontColor: var(--green);
+}
+
+.weather-theme{
+--bg: var(--ltyellow);
+--bg2: var(--ltblue2)
+--fontColor: var(--dkblue);    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - var(--fixedheight)); /* 100% of viewport height */
+}
+
+.left-side {
+    flex: 0 0 35%; /* 35% width */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: var(--ltyellow); /* Just for visualization */
+
+}
+
+.right-side {
+    flex: 1; /* Takes remaining space */
+    background-color: var(--ltblue2); /* Just for visualization */
+    padding: 50px; /* Optional: Add some padding */
+}
+
+.vertical-line {
+    width: 10px;
+    background-color: var(--dkblue); /* Color of the line */
+}
+
+.full-width-section {
+    width: 100%;
+    height: var(--fixedheight); /* Set the height as needed */
+    background-color: var(--dkblue); /* Example background color */
+    color: var(--ltgreen);
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex;
+    align-items: center;
+}

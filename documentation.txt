@@ -1,0 +1,13 @@
+Tools used for website UI
+    get color palette from image:  https://imagecolorpicker.com/
+    change colors in Dall-E created image:  https://www.fotor.com/photo-editor-app/editor/basic
+    remove image background:  https://www.remove.bg/upload
+
+Sample exercises
+    HTML/website: https://learn.microsoft.com/en-us/training/modules/get-started-with-web-development/
+    
+    AWS serverless static website: https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/
+    AWS serverless static website (backup):  https://webapp.serverlessworkshops.io/0-introduction/1-overview/
+
+Links to development resources
+    Jira Project: https://seewatersedge.atlassian.net/jira/software/c/projects/WEAT/boards/2
