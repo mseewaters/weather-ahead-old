@@ -61,7 +61,7 @@ list-style: square;
 .container {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - var(--fixedheight)); /* 100% of viewport height */
+    height: calc(100vh - var(--fixedheight) - 24px); /* 100% of viewport height */
 }
 
 .left-side {
@@ -84,13 +84,100 @@ list-style: square;
     background-color: var(--dkblue); /* Color of the line */
 }
 
-.full-width-section {
+
+
+form {
+    padding: 20px;
+    width: 80%; /* Fixed width */
+}
+
+.form-group {
+    margin-bottom: 30px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Ensures the label is on its own line */
+    margin-bottom: 5px; /* Small space between label and input field */
+    color: var(--dkblue);
+    font-size: 0.8rem; /* Smaller font size for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Makes input fields take up the full container width */
+    padding: 8px;
+    border: none; /* Removes all borders */
+    border-bottom: 2px solid var(--dkblue); /* Only bottom border */
+    background-color: var(--ltblue2); /* Ensures no background color */
+    outline: none; /* Removes the outline on focus */
+    color: var(--dkblue);
+    font-size: 1.2rem; /* Adjusts font size of input text */
+}
+
+/* Styling placeholders */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: var(--medblue); /* Light grey color for placeholder */
+    font-size: 1.2rem; /* Adjusts font size of placeholder */
+    font-style: italic;
+
+}
+
+button {
+    width: 100%; /* Button takes up the full width of its container */
+    padding: 10px;
+    background-color: var(--dkgreen); /* Blue background */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: var(--dkblue);
+    border-radius: 15px;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: var(--bluegreen); /* Darker blue on hover */
+}
+
+
+.top-banner {
     width: 100%;
     height: var(--fixedheight); /* Set the height as needed */
     background-color: var(--dkblue); /* Example background color */
     color: var(--ltgreen);
-    padding: 10px;
     box-sizing: border-box; /* Include padding in width calculation */
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.top-banner .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    color: var(--ltgreen);
+    text-decoration: none;
+}
+
+.top-banner nav a {
+    text-decoration: none;
+    color: var(--ltgreen);
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button.login {
+    background-color: transparent; /* Slightly less emphasis on login */
+}
+
+.button.signup {
+    background-color: var(--dkgreen); /* More emphasis on signup */
+}
+
+.top-banner nav a:hover {
+    background-color: #555; /* Hover effect for all buttons */
 }
