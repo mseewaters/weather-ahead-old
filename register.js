@@ -11,7 +11,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     };
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-    var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var password2 = document.getElementById('confirm-password').value;
