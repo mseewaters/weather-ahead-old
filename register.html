@@ -22,24 +22,34 @@
 
             <form id="registrationForm">
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="  Enter your username">
-                </div>
-                <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="  Enter your email">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" pattern=".*" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="  Enter your password">
+                    <label for="password">Password: Minimum 8 Characters.  Must contain:  1 Number, 1 Special character, 1 Uppercase letter, 1 Lowercase letter</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" pattern=".*" required>
                 </div>
                 <div class="form-group">
                     <label for="confirm-password">Confirm Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="  Confirm your password">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" pattern=".*" required>
                 </div>
                 <br>
-                <br>
                 <button type="submit">Submit registration</button>
+            </form>
+
+            <h1>Verify your email</h1>
+            <p>After registering, please check your email inbox or spam folder for your verification code. </p>
+            <form id="verificationForm">
+                <div class="form-group">
+                    <label for="emailverify">Email:</label>
+                    <input type="email" id="emailverify" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="codeInputVerify">Verification Code:</label>
+                    <input type="text" id="codeInputVerify" placeholder="Verification Code" pattern=".*" required>
+                </div>
+                <br>
+                <button type="submit">Verify email</button>
             </form>
         </div>
     </div>   

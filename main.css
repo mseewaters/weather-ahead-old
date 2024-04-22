@@ -61,7 +61,7 @@ list-style: square;
 .container {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - var(--fixedheight) - 24px); /* 100% of viewport height */
+    min-height: calc(100vh - var(--fixedheight) - 24px); /* 100% of viewport height */
 }
 
 .left-side {
@@ -76,7 +76,7 @@ list-style: square;
 .right-side {
     flex: 1; /* Takes remaining space */
     background-color: var(--ltblue2); /* Just for visualization */
-    padding: 50px; /* Optional: Add some padding */
+    padding: 10px 30px; /* Optional: Add some padding */
 }
 
 .vertical-line {
@@ -87,12 +87,12 @@ list-style: square;
 
 
 form {
-    padding: 20px;
-    width: 80%; /* Fixed width */
+    padding: 5px 20px;
+    width: 75%; /* Fixed width */
 }
 
 .form-group {
-    margin-bottom: 30px; /* Space between form fields */
+    margin-bottom: 15px; /* Space between form fields */
 }
 
 label {
@@ -126,7 +126,7 @@ input[type="password"]::placeholder {
 }
 
 button {
-    width: 100%; /* Button takes up the full width of its container */
+    width: 40%; 
     padding: 10px;
     background-color: var(--dkgreen); /* Blue background */
     color: white;
