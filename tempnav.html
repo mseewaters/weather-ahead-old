@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page with Banner</title>
+    <link rel="stylesheet" href="temp.css">
+</head>
+<body>
+    <header class="top-banner">
+        <a href="/" class="logo">YourLogo</a>
+        <nav>
+            <a href="/login" class="button login">Log In</a>
+            <a href="/signup" class="button signup">Sign Up</a>
+        </nav>
+    </header>
+
+    <button onclick="openModal()">Click to Perform Action</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p>Action was successful!</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

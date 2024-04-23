@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-banner {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-banner .logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.top-banner nav a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button.login {
+    background-color: transparent; /* Slightly less emphasis on login */
+}
+
+.button.signup {
+    background-color: #007BFF; /* More emphasis on signup */
+}
+
+.top-banner nav a:hover {
+    background-color: #555; /* Hover effect for all buttons */
+}
+
+.full-width-section {
+    width: 100%;
+    height: var(--fixedheight); /* Set the height as needed */
+    background-color: var(--dkblue); /* Example background color */
+    color: var(--ltgreen);
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex;
+    align-items: center;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Sit on top */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on the design */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

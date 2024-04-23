@@ -28,28 +28,10 @@ color: var(--fontColor);
 font-family: 'Roboto',Arial, sans-serif;
 }
 
-.center {
-    display: block;
-    margin: auto;
-    width: 80%;
-}
-
-li {
-    list-style: circle;
-}
-  
-.list {
-list-style: square;
-}
-
-.light-theme {
---bg: var(--green);
---fontColor: var(--black);
-}
-
-.dark-theme {
---bg: var(--black);
---fontColor: var(--green);
+.centered-image {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Center vertically */
 }
 
 .weather-theme{
@@ -65,34 +47,55 @@ list-style: square;
 }
 
 .left-side {
-    flex: 0 0 35%; /* 35% width */
+    flex: 0 0 20%; /* 35% width */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
     background-color: var(--ltyellow); /* Just for visualization */
+    margin-left: 15px;
+    margin-right: 15px;
 
 }
 
 .right-side {
     flex: 1; /* Takes remaining space */
     background-color: var(--ltblue2); /* Just for visualization */
-    padding: 10px 30px; /* Optional: Add some padding */
+    padding: 10px 20px; /* Optional: Add some padding */
+    line-height: 0.6;
+    
 }
 
+.right-side2 {
+    flex: 1; /* Takes remaining space */
+    background-color: var(--ltblue2); /* Just for visualization */
+    padding: 10px 20px; /* Optional: Add some padding */
+    line-height: 1.2;
+    
+}
 .vertical-line {
-    width: 10px;
+    width: 6px;
     background-color: var(--dkblue); /* Color of the line */
 }
 
+.container-inner {
+    display: flex;
+    flex-direction: column
+}
+.top-section {
+    flex: 0 0 25%; /* Takes up 25% of the vertical space */
+}
 
+.bottom-section {
+    flex: 1; /* Takes the remaining 75% of the vertical space */
+    justify-content:center;
+    align-items: center;
+}
 
 form {
-    padding: 5px 20px;
+    padding: 5px 0px;
     width: 75%; /* Fixed width */
 }
 
 .form-group {
-    margin-bottom: 15px; /* Space between form fields */
+    margin-bottom: 30px; /* Space between form fields */
 }
 
 label {
@@ -106,10 +109,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%; /* Makes input fields take up the full container width */
-    padding: 8px;
+    padding: 4px;
     border: none; /* Removes all borders */
     border-bottom: 2px solid var(--dkblue); /* Only bottom border */
-    background-color: var(--ltblue2); /* Ensures no background color */
+    background-color: transparent; /* Ensures no background color */
     outline: none; /* Removes the outline on focus */
     color: var(--dkblue);
     font-size: 1.2rem; /* Adjusts font size of input text */
@@ -127,7 +130,7 @@ input[type="password"]::placeholder {
 
 button {
     width: 40%; 
-    padding: 10px;
+    padding: 8px;
     background-color: var(--dkgreen); /* Blue background */
     color: white;
     font-size: 1.2rem;
@@ -135,10 +138,11 @@ button {
     border: var(--dkblue);
     border-radius: 15px;
     cursor: pointer; /* Pointer cursor on hover */
+
 }
 
 button:hover {
-    background-color: var(--bluegreen); /* Darker blue on hover */
+    background-color: var(--dkblue); /* Darker blue on hover */
 }
 
 
@@ -180,4 +184,37 @@ button:hover {
 
 .top-banner nav a:hover {
     background-color: #555; /* Hover effect for all buttons */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Sit on top */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on the design */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

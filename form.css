@@ -1,0 +1,49 @@
+form {
+    padding: 20px;
+    width: 50%; /* Fixed width */
+}
+
+.form-group {
+    margin-bottom: 30px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Ensures the label is on its own line */
+    margin-bottom: 5px; /* Small space between label and input field */
+    color: --dkblue;
+    font-size: 0.8rem; /* Smaller font size for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Makes input fields take up the full container width */
+    padding: 8px;
+    border: none; /* Removes all borders */
+    border-bottom: 2px solid #ccc; /* Only bottom border */
+    background-color: transparent; /* Ensures no background color */
+    outline: none; /* Removes the outline on focus */
+    font-size: 1rem; /* Adjusts font size of input text */
+}
+
+/* Styling placeholders */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #4218db; /* Light grey color for placeholder */
+    font-size: 1.2rem; /* Adjusts font size of placeholder */
+}
+
+button {
+    width: 100%; /* Button takes up the full width of its container */
+    padding: 10px;
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

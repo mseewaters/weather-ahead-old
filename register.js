@@ -1,6 +1,21 @@
 function toUsername(email) {
     return email.replace('@', '-at-');
 }
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+// Optional: Close the modal if the user clicks anywhere outside of the modal content
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -34,6 +49,8 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             }
             var cognitoUser = result.user;
             console.log('User registration successful: ' + cognitoUser.getUsername());
+            openModal(); // Call this function when the action is successful
+            window.location.href = '/verify.html';
         });
     } else {
         alert('Passwords do not match');
@@ -54,15 +71,11 @@ document.getElementById('verificationForm').addEventListener('submit', function(
     var email = document.getElementById('emailverify').value;
     var code = document.getElementById('codeInputVerify').value;
     
-    console.log(code)
-    console.log(email)
-      
+    
     var cognitoUser = new AmazonCognitoIdentity.CognitoUser({
         Username: toUsername(email),
         Pool: userPool
     });
-
-    console.log(cognitoUser)
 
     cognitoUser.confirmRegistration(code, true, function(err, result) {
         if (err) {
@@ -70,6 +83,7 @@ document.getElementById('verificationForm').addEventListener('submit', function(
             return;
         } else {
             console.log('Confirmation result:', result);
+            openModal(); // Call this function when the action is successful
             window.location.href = '/index.html';
         }
     });
