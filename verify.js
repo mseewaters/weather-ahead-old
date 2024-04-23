@@ -42,7 +42,9 @@ document.getElementById('verificationForm').addEventListener('submit', function(
         } else {
             console.log('Confirmation result:', result);
             openModal(); // Call this function when the action is successful
-            window.location.href = '/index.html';
+            setTimeout(function() {
+                window.location.href = '/index.html'; // Redirect URL
+            }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
         }
     });
 

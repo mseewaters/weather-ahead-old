@@ -50,7 +50,9 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             var cognitoUser = result.user;
             console.log('User registration successful: ' + cognitoUser.getUsername());
             openModal(); // Call this function when the action is successful
-            window.location.href = '/verify.html';
+            setTimeout(function() {
+                window.location.href = '/verify.html'; // Redirect URL
+            }, 1500); // Delay in milliseconds (3000ms = 3 seconds)
         });
     } else {
         alert('Passwords do not match');
