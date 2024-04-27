@@ -24,10 +24,11 @@ document.getElementById('verificationForm').addEventListener('submit', function(
             return;
         } else {
             console.log('Confirmation result:', result);
+            console.log('Cognito Post Confirmation event:', JSON.stringify(event, null, 2));
             openModal(); // Call this function when the action is successful
-            setTimeout(function() {
-                window.location.href = '/index.html'; // Redirect URL
-            }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
+            // setTimeout(function() {
+            //     window.location.href = '/index.html'; // Redirect URL
+            //}, 3000); // Delay in milliseconds (3000ms = 3 seconds)
         }
     });
 

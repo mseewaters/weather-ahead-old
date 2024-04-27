@@ -18,7 +18,9 @@ function loginUser(email, password) {
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function(result) {
             console.log('Authentication successful');
-            window.location.href = '/customize.html';           
+            var jwtToken = result.idToken.jwtToken;
+            console.log("JWT Token:", jwtToken)
+            // window.location.href = '/customize.html';           
             // Redirect the user to a new page or perform any other action
         },
         onFailure: function(err) {
