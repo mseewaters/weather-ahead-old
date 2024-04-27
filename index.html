@@ -30,10 +30,10 @@
                         <label for="password">Password: </label>
                         <input type="password" id="password" name="password" placeholder="Enter your password" pattern=".*" required>
                     </div>
-                    <button type="submit">Log in</button>
+                    <button type="submit" id="loginButton">Log in</button>
                 </form>
                 <p>Don't have an account?   <a href="/register.html">Sign up</a></p>
-                <p>Verify an account   <a href="/register.html">Verify</a></p>
+                <p>Verify an account   <a href="/verify.html">Verify</a></p>
                 <br>
             </div>
             <div class="bottom-section">
@@ -46,9 +46,23 @@
         <p style="font-size: 96px; font-weight: 700; font-style: italic;">Personalized notifications </p>
         <p style="font-size: 96px; font-weight: 700; font-style: italic;">that keep you informed </p>
         <p style="font-size: 96px; font-weight: 700; font-style: italic;">of weather events</p>
-        <p style="font-size: 96px; font-weight: 700; font-style: italic;">that impact YOU.</p>
+        <p style="font-size: 96px; font-weight: 700; font-style: italic;">that impact you.</p>
         </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p>Incorrect username of password.</p>
+        </div>
+    </div>
 </div>   
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1040.0.min.js"></script>
+    <script src="js/aws-cognito-sdk.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/signin.js"></script>
+
 </body>
 </html>
 
