@@ -8,8 +8,8 @@ function loginUser(email, password) {
     var userData = {
         Username: toUsername(email),
         Pool: new AmazonCognitoIdentity.CognitoUserPool({
-            UserPoolId: 'us-east-1_qKsrXJSBS',
-            ClientId: '1t5h9lfrdf662ca5jvnnsb9etb'
+            UserPoolId: _config.cognito.userPoolId,
+            ClientId: _config.cognito.userPoolClientId
         }),
     };
 
@@ -17,10 +17,11 @@ function loginUser(email, password) {
 
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function(result) {
-            console.log('Authentication successful');
+            console.log('Authentication successful:', result);
             var jwtToken = result.idToken.jwtToken;
+            localStorage.setItem('userToken', jwtToken);
             console.log("JWT Token:", jwtToken)
-            // window.location.href = '/customize.html';           
+            window.location.href = '/customize.html';           
             // Redirect the user to a new page or perform any other action
         },
         onFailure: function(err) {

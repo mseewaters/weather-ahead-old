@@ -3,11 +3,12 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     event.preventDefault();
 
     var poolData = {
-        UserPoolId: 'us-east-1_qKsrXJSBS', // Your user pool id here
-        ClientId: '1t5h9lfrdf662ca5jvnnsb9etb' // Your client id here
+        UserPoolId: _config.cognito.userPoolId, // Your user pool id here
+        ClientId: _config.cognito.userPoolClientId // Your client id here
     };
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
+    var nickname = document.getElementById('nickname').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var password2 = document.getElementById('confirm-password').value;
@@ -18,9 +19,15 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         Name: 'email',
         Value: email
     };
-
     var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
     attributeList.push(attributeEmail);
+
+    var dataNickname = {
+        Name: 'nickname',
+        Value: nickname
+    };
+    var attributeNickname = new AmazonCognitoIdentity.CognitoUserAttribute(dataNickname);
+    attributeList.push(attributeNickname);
 
 
     if (password === password2) {
