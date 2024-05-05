@@ -2,6 +2,7 @@ Tools used for website UI
     get color palette from image:  https://imagecolorpicker.com/
     change colors in Dall-E created image:  https://www.fotor.com/photo-editor-app/editor/basic
     remove image background:  https://www.remove.bg/upload
+    icons:  https://iconscout.com/
 
 Sample exercises
     HTML/website: https://learn.microsoft.com/en-us/training/modules/get-started-with-web-development/
@@ -11,3 +12,306 @@ Sample exercises
 
 Links to development resources
     Jira Project: https://seewatersedge.atlassian.net/jira/software/c/projects/WEAT/boards/2
+
+
+ Website Outline
+
+ Here's an outline for a website that provides customizable weather event notifications to registered users:
+
+I. Home Page - index.html
+   A. Brief introduction to the website's purpose
+   B. Highlight key features and benefits
+   C. Call-to-action to sign up or log in
+
+II. Registration and Login
+    A. User registration form - register.html
+       1. Name
+       2. Email address
+       3. Password
+       4. Location (zip code or city)
+    B. Login form
+       1. Email address
+       2. Password
+    C. Forgot password functionality
+
+III. User Dashboard
+     A. Welcome message and user profile summary
+     B. Weather event selection
+        1. Customizable list of weather events (e.g., rain, snow, heatwave, cold snap, high winds, etc.)
+        2. Severity thresholds for each event (e.g., rainfall amount, temperature range, wind speed)
+     C. Notification preferences
+        1. Email delivery schedule (e.g., daily, every 3 days, weekly)
+        2. Time of day for email delivery
+     D. Location management
+        1. Add or remove locations
+        2. Set default location
+
+IV. Weather Event Notifications
+    A. Daily weather summary for selected location(s)
+    B. Upcoming weather events (next 7 days)
+       1. Event type
+       2. Severity
+       3. Expected date and time
+    C. Personalized recommendations or tips based on weather events
+
+V. Weather Information Resources
+   A. Educational articles about weather events and their impacts
+   B. Tips for preparing for and dealing with specific weather events
+   C. Links to external resources (e.g., National Weather Service)
+
+VI. Account Settings
+    A. Update personal information
+    B. Change email address or password
+    C. Manage notification preferences
+    D. Delete account
+
+VII. About Us
+     A. Company background and mission
+     B. Team members
+     C. Contact information
+
+VIII. FAQ and Support
+      A. Frequently Asked Questions
+      B. Contact form for user support
+      C. Help documentation or user guide
+
+IX. Footer
+   A. Copyright information
+   B. Terms of service and privacy policy links
+   C. Social media links   
+
+
+   +-----------------------------------------------------------------------------------+
+|                                  User Dashboard                                  |
++-----------------------------------------------------------------------------------+
+|  Welcome, [User Name]!                                        Location: [City]   |
++-----------------------------------------------------------------------------------+
+|                                                                                   |
+|  Weather Event Selection                                                          |
+|  +----------------+----------------+----------------+----------------+            |
+|  | ☑ Rain         | ☑ Snow         | ☐ Heatwave     | ☐ Cold Snap    |            |
+|  +----------------+----------------+----------------+----------------+            |
+|  | Severity: ▼    | Severity: ▼    | Severity: ▼    | Severity: ▼    |            |
+|  | ☑ > 0.5 inches | ☑ > 2 inches   | ☐ > 90°F       | ☐ < 32°F       |            |
+|  +----------------+----------------+----------------+----------------+            |
+|  | ☑ High Winds   | ☐ Thunderstorm | ☐ Fog          | ☐ Humidity     |            |
+|  +----------------+----------------+----------------+----------------+            |
+|  | Severity: ▼    | Severity: ▼    | Severity: ▼    | Severity: ▼    |            |
+|  | ☑ > 30 mph     | ☐ Any          | ☐ Dense        | ☐ > 70%        |            |
+|  +----------------+----------------+----------------+----------------+            |
+|                                                                                   |
+|  Notification Preferences                                                         |
+|  +----------------+----------------+                                              |
+|  | Email Schedule:| ▼ Daily       |                                              |
+|  +----------------+----------------+                                              |
+|  | Delivery Time: | ▼ 7:00 AM     |                                              |
+|  +----------------+----------------+                                              |
+|                                                                                   |
+|  Location Management                                                              |
+|  +----------------+----------------+----------------+----------------+            |
+|  | Default        | [City]         | Change         |                |            |
+|  +----------------+----------------+----------------+----------------+            |
+|  | Other Locations:                                                  |            |
+|  | [City 2]       | Remove         | [City 3]       | Remove         |            |
+|  +----------------+----------------+----------------+----------------+            |
+|  | Add Location   |                                                  |            |
+|  +----------------+----------------+----------------+----------------+            |
+|                                                                                   |
+|                                 [ Save Changes ]                                  |
+|                                                                                   |
++-----------------------------------------------------------------------------------+
+
+---------------------------------------------------
+|                  User Dashboard                  |
+---------------------------------------------------
+| Welcome, [User]!                               |
+---------------------------------------------------
+| [Profile Picture]                               |
+|                                                 |
+|    Name: [User's Name]                          |
+|    Email: [User's Email]                        |
+|    Password: ********** [Change Password]       |
+|    [Save Changes] [Cancel]                      |
+---------------------------------------------------
+| Weather Event Preferences                       |
+---------------------------------------------------
+| [ ] Thunderstorms                               |
+| [ ] Snowfall                                    |
+| [ ] Hurricanes                                  |
+| [ ] Tornadoes                                   |
+| [ ] Heatwaves                                   |
+| [Save Preferences] [Cancel]                     |
+---------------------------------------------------
+| Delivery Schedule                               |
+---------------------------------------------------
+| Frequency: [Dropdown: Daily/Weekly/Custom]      |
+| Schedule: [Calendar]                            |
+|    Sun  Mon  Tue  Wed  Thu  Fri  Sat           |
+|    [ ]   [ ]   [ ]   [ ]   [ ]   [ ]   [ ]      |
+| [Save Schedule] [Cancel]                        |
+---------------------------------------------------
+| Email Notification Preferences                  |
+---------------------------------------------------
+| [ ] Notify me via email                         |
+| [ ] Notify me via text message                  |
+| [Save Preferences] [Cancel]                     |
+---------------------------------------------------
+
+
+Data Structure:
+{
+  "username": "example_user",
+  "email": "example@example.com",
+  "name": "John Doe",
+  "location": {
+    "zip_code": "12345",
+    "coordinates" : {
+        "latitude": 40.7128,
+        "longitude": -74.0060
+        }
+  },
+  "updates": true,
+  "special_days": [
+    { "type": "birthday", "date": "2024-05-10" },
+    { "type": "anniversary", "date": "2024-09-20" }
+  ],
+  "notification_time": "morning",
+  "notification_days": [1, 3, 5],
+  "events": [
+    {
+      "type": "running_outside",
+      "parameters": {
+        "average_temperature": 20,
+        "average_wind_speed": 10,
+        "chance_of_rain": 20,
+        "amount_of_rain": 0
+      }
+    },
+    {
+      "type": "bring_in_plants",
+      "parameters": {
+        "minimum_temperature": 10
+      }
+    }
+  ]
+}
+
+
+
+import boto3
+import datetime
+import requests
+
+dynamodb = boto3.resource('dynamodb')
+user_table = dynamodb.Table('UserProfile')
+ses = boto3.client('ses')
+
+def lambda_handler(event, context):
+    # Get current day
+    current_day = datetime.datetime.now().strftime('%A')
+
+    # Query users who have selected the current day for notifications
+    response = user_table.scan(
+        FilterExpression=Attr('notificationDays').contains(current_day)
+    )
+    users = response['Items']
+
+    # Collect unique zip codes from the users
+    zip_codes = set(user['location']['zipCode'] for user in users)
+
+    # Retrieve weather forecasts for each unique zip code
+    forecasts = {}
+    for zip_code in zip_codes:
+        forecast = get_weather_forecast(zip_code)
+        forecasts[zip_code] = forecast
+
+    for user in users:
+        username = user['username']
+        email = user['email']
+        zip_code = user['location']['zipCode']
+
+        # Retrieve weather forecast for the user's zip code from the forecasts dictionary
+        forecast = forecasts[zip_code]
+
+        # Get user's special days and events from the user table
+        special_days = user.get('specialDays', [])
+        events = user.get('events', [])
+
+        # Create a custom table and email content
+        table_html = create_table_html(forecast, special_days, events)
+        email_body = f"<h3>Daily Weather Notification</h3><p>Hello {user['name']},</p>{table_html}"
+
+        # Send email using Amazon SES
+        send_email(email, email_body)
+
+def get_weather_forecast(zip_code):
+    # Make API call to retrieve weather forecast for the given zip code
+    # Replace 'YOUR_WEATHER_API_KEY' with your actual weather API key
+    url = f"https://api.weatherapi.com/v1/forecast.json?key=YOUR_WEATHER_API_KEY&q={zip_code}&days=1"
+    response = requests.get(url)
+    forecast_data = response.json()
+    
+    # Extract relevant forecast information
+    forecast = {
+        'date': forecast_data['forecast']['forecastday'][0]['date'],
+        'max_temp': forecast_data['forecast']['forecastday'][0]['day']['maxtemp_c'],
+        'min_temp': forecast_data['forecast']['forecastday'][0]['day']['mintemp_c'],
+        'condition': forecast_data['forecast']['forecastday'][0]['day']['condition']['text']
+    }
+    
+    return forecast
+
+def create_table_html(forecast, special_days, events):
+    # Create an HTML table with the forecast, special days, and events
+    table_html = "<table>"
+    table_html += f"<tr><th>Date</th><td>{forecast['date']}</td></tr>"
+    table_html += f"<tr><th>Max Temperature</th><td>{forecast['max_temp']}°C</td></tr>"
+    table_html += f"<tr><th>Min Temperature</th><td>{forecast['min_temp']}°C</td></tr>"
+    table_html += f"<tr><th>Condition</th><td>{forecast['condition']}</td></tr>"
+    
+    if special_days:
+        table_html += "<tr><th>Special Days</th><td>"
+        for day in special_days:
+            table_html += f"{day['type']} - {day['date']}<br>"
+        table_html += "</td></tr>"
+    
+    if events:
+        table_html += "<tr><th>Events</th><td>"
+        for event in events:
+            table_html += f"{event['type']}<br>"
+        table_html += "</td></tr>"
+    
+    table_html += "</table>"
+    return table_html
+
+def send_email(email, body):
+    ses.send_email(
+        Source='noreply@yourdomain.com',
+        Destination={
+            'ToAddresses': [email]
+        },
+        Message={
+            'Subject': {
+                'Data': 'Daily Weather Notification'
+            },
+            'Body': {
+                'Html': {
+                    'Data': body
+                }
+            }
+        }
+    )
+
+
+
+node.js
+
+Full details regarding Node.js release schedule are available on GitHub.
+
+Looking for latest release of a version branch?
+Node.js Version	Codename	Release Date	npm
+v22.1.0	-	2024-05-02	v10.7.0	
+v21.7.3	-	2024-04-10	v10.5.0	
+v20.12.2	Iron	2024-04-10	
+v19.9.0	-	2023-04-10	v9.6.3	
+v18.20.2	Hydrogen	2024-04-10	v10.5.0	
